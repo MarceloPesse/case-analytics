@@ -132,3 +132,17 @@ jQuery('.card-montadoras').on('click tap', function () {
         eventLabel: data.name
       });
 });
+
+// Checar como verificar se o aceito esta clicado
+jQuery('#email, #nome, #telefone, #aceito').on('blur', function(e) {
+    if(jQuery(this).val().length >= 1) {
+        console.log(jQuery(this)[0].id);
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'contato',
+            eventAction: jQuery(this)[0].id,
+            eventLabel: 'preencheu'
+          });
+    }
+});
+
