@@ -94,17 +94,8 @@
 // para fazer a sua coleta.
 // Caso tenha alguma dúvida sobre o case, não hesite em entrar em contato.
 
-//<!-- Google Analytics -->
-//<script>
-//(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-//(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-//m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-//})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
 ga('create', 'UA-180546655-1', 'auto');
 ga('send', 'pageview');
-//</script>
-//<!-- End Google Analytics -->
 
 ga(function(tracker) {
     // Logs the tracker created above to the console.
@@ -128,5 +119,16 @@ jQuery('.menu-lista-download').on('click tap', function () {
         eventCategory: 'menu',
         eventAction: 'download_pdf',
         eventLabel: 'download_pdf'
+      });
+});
+
+jQuery('.card-montadoras').on('click tap', function () {
+    var data = jQuery(this).data();
+    console.log(data.name);
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'analise',
+        eventAction: 'ver_mais',
+        eventLabel: data.name
       });
 });
