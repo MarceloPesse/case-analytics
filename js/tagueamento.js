@@ -1,5 +1,5 @@
-(function(){/*
-
+(function(){
+    /*
     Copyright The Closure Library Authors.
     SPDX-License-Identifier: Apache-2.0
    */
@@ -94,14 +94,17 @@
 // para fazer a sua coleta.
 // Caso tenha alguma dúvida sobre o case, não hesite em entrar em contato.
 
+
+// Create trackers
 ga('create', 'UA-180546655-1', 'auto');
 ga('send', 'pageview');
 
+// Logs the tracker created above to the console.
 ga(function(tracker) {
-    // Logs the tracker created above to the console.
     console.log(tracker);
 });
 
+// Menu tab 'Entre em contato' clicked
 jQuery('.menu-lista-contato').on('click tap', function () {
     console.log('contato');
     ga('send', {
@@ -112,6 +115,7 @@ jQuery('.menu-lista-contato').on('click tap', function () {
       });
 });
 
+// Menu tab 'Download' clicked
 jQuery('.menu-lista-download').on('click tap', function () {
     console.log('download');
     ga('send', {
@@ -122,6 +126,7 @@ jQuery('.menu-lista-download').on('click tap', function () {
       });
 });
 
+// 'Montadoras' button clicked
 jQuery('.card-montadoras').on('click tap', function () {
     var data = jQuery(this).data();
     console.log(data.name);
@@ -133,8 +138,8 @@ jQuery('.card-montadoras').on('click tap', function () {
       });
 });
 
-// Checar como verificar se o aceito esta clicado
-jQuery('#email, #nome, #telefone, #aceito').on('blur', function(e) {
+// Contact info filled
+jQuery('#email, #nome, #telefone, #aceito').on('blur', function() {
     if(jQuery(this).val().length >= 1) {
         console.log(jQuery(this)[0].id);
         ga('send', {
@@ -146,3 +151,15 @@ jQuery('#email, #nome, #telefone, #aceito').on('blur', function(e) {
     }
 });
 
+// Sent button clicked
+// Should be when the lightbox open
+var submit = jQuery('.contato button[type="submit"]');
+jQuery('.contato').on('submit', function () {
+    console.log('enviado o formulario de contato');
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'contato',
+        eventAction: 'enviado',
+        eventLabel: 'enviado'
+      });
+});
