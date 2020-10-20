@@ -2,6 +2,8 @@
 
 Programa simples feito em jQuery e a biblioteca para js do Google Analytics com o objetivo de testar o funcionamento da plataforma.
 
+Git pages com o mockup: https://marcelopesse.github.io/case-analytics/
+
 ## Problema proposto
 Identificar algumas ações do usuário como:
 - click de botões específicos
