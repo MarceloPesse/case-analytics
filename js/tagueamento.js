@@ -5,8 +5,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 // Create trackers
-//ga('create', 'UA-180546655-1', 'auto');
-ga('create', MY_TRACKER, 'auto');
+ga('create', 'UA-180546655-1', 'auto');
 // Logs the tracker created above to the console.
 ga(function(tracker) {
     console.log(tracker);
